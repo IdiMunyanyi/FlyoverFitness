@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "144632313865",
+    "project_id": "flyover-fitness",
+    "storage_bucket": "flyover-fitness.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144632313865:android:f1cf8fa4f6785d10a260d8",
+        "android_client_info": {
+          "package_name": "com.flyoverfitness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144632313865-54akutuvtnm3b36bcjcih75bqfockarn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flyoverfitness",
+            "certificate_hash": "122468d1c7ba9e94a89cdbb8d8721f8a0ec49925"
+          }
+        },
+        {
+          "client_id": "144632313865-qum08u39p95hetktcno9j1b7h1sbqd03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_TOpsBqrWpcJPTIkOqvgfNNyc0O-Nk5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144632313865-qum08u39p95hetktcno9j1b7h1sbqd03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
