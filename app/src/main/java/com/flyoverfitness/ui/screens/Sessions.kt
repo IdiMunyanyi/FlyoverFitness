@@ -1,4 +1,5 @@
 package com.flyoverfitness.ui.screens
+
 import android.content.Context
 import android.net.Uri
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -53,8 +55,7 @@ import androidx.navigation.compose.rememberNavController
 import com.flyoverfitness.R
 import com.flyoverfitness.ui.ContactUs
 import com.flyoverfitness.ui.ScheduleTable
-import com.flyoverfitness.ui.theme.BobGreen
-import com.flyoverfitness.ui.theme.Purple40
+import com.flyoverfitness.ui.TopBar
 
 
 @Composable
@@ -65,62 +66,43 @@ fun Sessions(navController: NavController) {
         "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
     )
 
-    val imagesList = listOf(
-        R.drawable.liz,
-        R.drawable.bg,
-        R.drawable.idi,
-        // Add more image resources as needed
-    )
-    Surface(
-        modifier = Modifier.fillMaxSize()
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 0.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 0.dp)
-                .background(
-                    color = Color.Black,
-                    shape = RectangleShape
-                ),
+                .padding(top = 15.dp, bottom = 25.dp)
+                .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Flyover Fitness",
-                color = Color.White,
-                fontSize = 34.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(top = 15.dp)
+                text = "Our Schedule",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.SemiBold
             )
-            Column(
-                modifier = Modifier
-                    .padding(top = 15.dp, bottom = 25.dp)
-                    .fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "Our Schedule",
-                    color = BobGreen,
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-            }
-            ScheduleTable()
-            Spacer(modifier = Modifier.height(8.dp))
-            /*YoImageGrid(
-                videoList = videosList,
-                imageList = imagesList,
-                navController = rememberNavController()
-            )
-             */
+        }
+        ScheduleTable()
+        Spacer(modifier = Modifier.height(8.dp))
+        /*YoImageGrid(
+            videoList = videosList,
+            imageList = imagesList,
+            navController = rememberNavController()
+        )
+         */
 
-            Row(
-                modifier = Modifier
-                    .padding(top = 10.dp)
-                    .background(color = Purple40, RoundedCornerShape(20.dp)),
-                verticalAlignment = Alignment.Bottom
-            ) {
-                ContactUs()
-            }
+        Row(
+            modifier = Modifier
+                .padding(top = 10.dp)
+                .background(
+                    color = MaterialTheme.colorScheme.surfaceContainerHigh,
+                    RoundedCornerShape(20.dp)
+                ),
+            verticalAlignment = Alignment.Bottom
+        ) {
+            ContactUs()
         }
     }
 }

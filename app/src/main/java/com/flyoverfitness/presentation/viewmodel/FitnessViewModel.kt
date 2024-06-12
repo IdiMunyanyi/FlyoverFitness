@@ -14,14 +14,18 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FitnessViewModel(val repository: Repository): ViewModel() {
+class FitnessViewModel(private val repository: Repository): ViewModel() {
     fun addDetails(fitness: FitnessEntity){
         viewModelScope.launch{
             repository.addToRoom(fitness)
         }
     }
 
-    val latestEntry = repository.getAll()
+    val getAll: LiveData<List<FitnessEntity>> = repository.getAll
     val lastEntry: LiveData<FitnessEntity> = repository.lastEntry
+
+    fun prepareMap(fitnessData: List<FitnessEntity>):Map<Float, String>{
+        return fitnessData.associate { it.weight.toFloat() to it.id.toString() }
+    }
 
 }

@@ -11,7 +11,7 @@ class Repository(val fitnessDb: FitnessDB) {
         fitnessDb.fitnessDao().addDetails(fitnessEntity)
     }
 
-    fun getAll() = fitnessDb.fitnessDao().getAll()
+    val getAll: LiveData<List<FitnessEntity>> = fitnessDb.fitnessDao().getAll()
 
     val lastEntry: LiveData<FitnessEntity> = fitnessDb.fitnessDao().getLastEntry()
 }
