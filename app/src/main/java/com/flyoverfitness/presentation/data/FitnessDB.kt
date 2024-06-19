@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 // 1. Database Setup
 
-@Database(entities = [FitnessEntity::class], version = 1)
+@Database(entities = [FitnessEntity::class], version = 2)
 abstract class FitnessDB : RoomDatabase() {
     abstract fun fitnessDao(): FitnessDao
 

@@ -140,7 +140,6 @@ class MainActivity : ComponentActivity() {
                                 viewModel.resetState()
                             }
                         }
-
                         SignInScreen(
                             state = state,
                             onSignInClick = {
